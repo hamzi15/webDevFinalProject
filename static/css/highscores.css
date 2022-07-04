@@ -1,0 +1,93 @@
+h1{
+    margin-top: 45px;
+    font-weight: bolder;
+    font-size: 50px;
+    font-family: "SF Pro Display", sans-serif;
+    color: #cffdfa;
+}
+
+span{
+    margin-top: 45px;
+    font-weight: bolder;
+    font-size: 35px;
+    font-family: "SF Pro Display", sans-serif;
+    color: #022051;
+}
+
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr {
+    color: #ffffff;
+    text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table tbody tr:last-of-type{
+    border-bottom: 2px solid #00d0c7;
+}
+
+tbody tr:hover {
+    background-color: #022051;
+    color: #ffffff;
+    font-weight: bolder;
+}
+
+th{
+    color: #022051;
+    background: #00d0c7;
+    font-family: "SF Pro Display", sans-serif;
+    font-weight: bold;
+    font-size: large;
+}
+
+tbody tr{
+    font-family: "SF Pro Display", sans-serif;
+    font-weight: bold;
+    font-size: medium;
+}
+
+#topLeft{
+    border-top-left-radius: 5px;
+}
+
+#topRight{
+    border-top-right-radius: 5px;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url("Background.jpg") center no-repeat;
+}
+
+tr{
+    background: white;
+}
+
+button{
+    font-size: larger;
+    font-weight: bolder;
+    padding: 10px;
+    border: none;
+    border-radius: 50px;
+    width: 150px;
+    background: linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1));
+}
+
+button:hover{
+    background: linear-gradient(to right, rgb(176, 245, 200), rgb(183, 223, 245));
+    cursor: pointer;
+}
