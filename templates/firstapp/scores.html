@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <link rel="stylesheet" href = "{% static "/css/highscores.css" %}" type="text/css">
+    <div style="text-align: center;">
+        <h1>Highscores</h1>
+        <table class="styled-table">
+            <col style = "width: 10%">
+            <col style = "width: 45%">
+            <col style = "width: 45%">
+            <thead>
+                <tr>
+                    <th id = "topLeft">#</th>
+                    <th>Moves</th>
+                    <th id = "topRight">Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td id="r1c1"></td>
+                    <td id="r1c2"></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td id="r2c1"></td>
+                    <td id="r2c2"></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td id="r3c1"></td>
+                    <td id="r3c2"></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td id="r4c1"></td>
+                    <td id="r4c2"></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td id="r5c1"></td>
+                    <td id="r5c2"></td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td id="r6c1"></td>
+                    <td id="r6c2"></td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td id="r7c1"></td>
+                    <td id="r7c2"></td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td id="r8c1"></td>
+                    <td id="r8c2"></td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td id="r9c1"></td>
+                    <td id="r9c2"></td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td id="r10c1"></td>
+                    <td id="r10c2"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <a href = "{% url 'index' %}">
+        <button>Go back</button>
+    </a>
+{% endblock %}
