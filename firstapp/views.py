@@ -12,11 +12,31 @@ def index(request):
     return render(request, 'firstapp/index.html', {'username': username})
 
 def scores(request):
-    data = Score.objects.all
-    print("HERE",data)
+    all_items = Score.objects.all()
+    
+    
+    data = {}
+    numbers = ["zero","one","two","three","four","five","six","seven","eight","nine","ten"]
+    data = {
+        "zero": {"username" : "", "moves" : "", "time" : ""},
+        "one": {"username" : "", "moves" : "", "time" : ""},
+        "two": {"username" : "", "moves" : "", "time" : ""},
+        "three": {"username" : "", "moves" : "", "time" : ""},
+        "four": {"username" : "", "moves" : "", "time" : ""},
+        "five": {"username" : "", "moves" : "", "time" : ""},
+        "six": {"username" : "", "moves" : "", "time" : ""},
+        "seven": {"username" : "", "moves" : "", "time" : ""},
+        "eight": {"username" : "", "moves" : "", "time" : ""},
+        "nine": {"username" : "", "moves" : "", "time" : ""},
+        "ten": {"username" : "", "moves" : "", "time" : ""},
+    }
+    for i in range(len(all_items)):
+        if i > 9:
+            break 
+        data[numbers[i]] = {"username": all_items[i].username, "moves": all_items[i].moves, "time": all_items[i].time}
+    print(data)
 
-    username = request.user
-    return render(request, 'firstapp/scores.html', {'data': data})
+    return render(request, 'firstapp/scores.html', data)
 
 @csrf_exempt
 def postScore(request):

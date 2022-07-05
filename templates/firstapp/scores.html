@@ -2,9 +2,6 @@
 {% load static %}
 
 {% block content %}
-    {% for item in all %}
-            {{item.moves}} {{item.time}}
-    {% endfor %}
     <link rel="stylesheet" href = "{% static "/css/highscores.css" %}" type="text/css">
     <div style="text-align: center;">
         <h1>Highscores</h1>
@@ -22,53 +19,53 @@
             <tbody>
                 <tr>
                     <td>1</td>
-                    <td id="r1c1"></td>
-                    <td id="r1c2"></td>
+                    <td id="r1c1">{{zero.moves}}</td>
+                    <td id="r1c2">{{zero.time}}</td>
                 </tr>
                 <tr>
                     <td>2</td>
-                    <td id="r2c1"></td>
-                    <td id="r2c2"></td>
+                    <td id="r2c1">{{one.moves}}</td>
+                    <td id="r2c2">{{one.time}}</td>
                 </tr>
                 <tr>
                     <td>3</td>
-                    <td id="r3c1"></td>
-                    <td id="r3c2"></td>
+                    <td id="r3c1">{{two.moves}}</td>
+                    <td id="r3c2">{{two.time}}</td>
                 </tr>
                 <tr>
                     <td>4</td>
-                    <td id="r4c1"></td>
-                    <td id="r4c2"></td>
+                    <td id="r4c1">{{three.moves}}</td>
+                    <td id="r4c2">{{three.time}}</td>
                 </tr>
                 <tr>
                     <td>5</td>
-                    <td id="r5c1"></td>
-                    <td id="r5c2"></td>
+                    <td id="r5c1">{{four.moves}}</td>
+                    <td id="r5c2">{{four.time}}</td>
                 </tr>
                 <tr>
                     <td>6</td>
-                    <td id="r6c1"></td>
-                    <td id="r6c2"></td>
+                    <td id="r6c1">{{five.moves}}</td>
+                    <td id="r6c2">{{five.time}}</td>
                 </tr>
                 <tr>
                     <td>7</td>
-                    <td id="r7c1"></td>
-                    <td id="r7c2"></td>
+                    <td id="r7c1">{{six.moves}}</td>
+                    <td id="r7c2">{{six.time}}</td>
                 </tr>
                 <tr>
                     <td>8</td>
-                    <td id="r8c1"></td>
-                    <td id="r8c2"></td>
+                    <td id="r8c1">{{seven.moves}}</td>
+                    <td id="r8c2">{{seven.time}}</td>
                 </tr>
                 <tr>
                     <td>9</td>
-                    <td id="r9c1"></td>
-                    <td id="r9c2"></td>
+                    <td id="r9c1">{{eight.moves}}</td>
+                    <td id="r9c2">{{eight.time}}</td>
                 </tr>
                 <tr>
                     <td>10</td>
-                    <td id="r10c1"></td>
-                    <td id="r10c2"></td>
+                    <td id="r10c1">{{nine.moves}}</td>
+                    <td id="r10c2">{{nine.time}}</td>
                 </tr>
             </tbody>
         </table>
