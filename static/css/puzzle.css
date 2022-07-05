@@ -2,7 +2,7 @@
     font-family: "SF Pro Display", sans-serif;
     text-align: center;
     color: #000000;
-    background: url("Background.jpg") center no-repeat;
+    /* background: url("Background.jpg") center no-repeat; */
 }
 
 #puzzleBoard{

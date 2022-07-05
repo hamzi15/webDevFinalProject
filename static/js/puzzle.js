@@ -3,8 +3,7 @@ const columns = 3;
 let currTile;
 let moveCount = 0;
 const imgOrder = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
-const folders = ["{% static "/img/Moonknight/""];
-//"../img/Moon Knight/", "../img/Homelander/", "../img/Daredevil/", "../img/Joker/", "../img/Soldier Boy/", "../img/US Agent/", "../img/Deadpool/"
+const folders = ["Moon Knight/", "Homelander/", "Daredevil/", "Joker/", "Soldier Boy/", "US Agent/", "Deadpool/"];
 const directions = ["Up", "Down", "Left", "Right"];
 const folderPicked = pickFolder(folders);
 const movesToSolve = [];
@@ -12,13 +11,14 @@ let winningCondition = false;
 let timer;
 
 window.onload = function(){
+    console.log("ye")
     timer = (document.getElementById("stopwatch"));
     let shuffledArray = trueShuffle(imgOrder);
     for (let counter = 0; counter < rows; counter++){
         for (let counterTwo = 0; counterTwo < columns; counterTwo++){
             let tile = document.createElement("img");
             tile.id = counter.toString() + "-" + counterTwo.toString();
-            tile.src = folderPicked + shuffledArray.shift() + ".jpg %}";
+            tile.src = folderPicked + shuffledArray.shift() + ".jpg";
             tile.addEventListener("mousedown", clickSwitch);
             tile.addEventListener("mouseup", clickOver);
             document.getElementById("puzzleBoard").append(tile);

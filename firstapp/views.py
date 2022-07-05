@@ -6,14 +6,14 @@ from firstapp.models import Contact
 
 # Create your views here.
 def index(request):
-    context = { 'name' : 'Hamza ' }
-    if(request.method == 'POST'):
-        name = request.POST.get('name')
-        email = request.POST.get('email')
-        desc = request.POST.get('desc')
-        contact = Contact(name = name, email = email, desc =desc)
+    # context = { 'name' : 'Hamza ' }
+    # if(request.method == 'POST'):
+    #     name = request.POST.get('name')
+    #     email = request.POST.get('email')
+    #     desc = request.POST.get('desc')
+    #     contact = Contact(name = name, email = email, desc =desc)
 
-        contact.save()
+    #     contact.save()
     return render(request, 'firstapp/index.html')
 
 def scores(request):
