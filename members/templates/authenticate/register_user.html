@@ -39,7 +39,7 @@
                     text-body">Register</button>
                   </div> -->
 
-                  <input type="submit" value="Register" class="btn btn-success btn-block btn-lg gradient-custom-4
+                  <input id = "btn" type="submit" value="Register" class="btn btn-success btn-block btn-lg gradient-custom-4
                   text-body">
 
                   <p class="text-center text-muted mt-5 mb-0">Have already an account?
@@ -53,4 +53,25 @@
       </div>
     </div>
   </section>
+    <style>
+        #btn{
+        background: linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1));
+        border: none;
+        border-radius: 50px;
+        padding: 10px;
+        width: 200px;
+    }
+
+    #btn:hover{
+        background: linear-gradient(to right, rgb(173, 253, 203), rgb(177, 233, 255));
+    }
+
+    body{
+        background: url("../../static/img/Background.jpg");
+    }
+
+    u:hover{
+        color: #6e6e6e;
+    }
+    </style>
 {% endblock %}
