@@ -18,8 +18,6 @@
 
     <!-- <script src="{% static '/js/puzzle.js' %}"></script> -->
     
-
-
     <style>
         #main{
             font-family: "SF Pro Display", sans-serif;
@@ -39,8 +37,8 @@
         }
         
         #puzzleBoard img{
-            width: 118px;
-            height: 118px;
+            width: 113px;
+            height: 113px;
             border: 1px solid #000000;
         }
         
@@ -74,13 +72,14 @@
         }
         
     </style>
+
     <script>
         const rows = 3;
 const columns = 3;
 let currTile;
 let moveCount = 0;
 const imgOrder = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
-const folders = ["../../static/img/Moon Knight/"];
+const folders = ["../../static/img/Moon Knight/", "../../static/img/Homelander/", "../../static/img/Daredevil/", "../../static/img/Joker/", "../../static/img/Soldier Boy/", "../../static/img/US Agent/", "../../static/img/Deadpool/"];
 const directions = ["Up", "Down", "Left", "Right"];
 const folderPicked = pickFolder(folders);
 const movesToSolve = [];
