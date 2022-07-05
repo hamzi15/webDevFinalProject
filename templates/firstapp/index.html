@@ -2,26 +2,14 @@
 {% load static %}
 
 {% block content %}
-    <!-- Show login logout button depending on state-->
-    {% if user.is_authenticated %}
-    <span>Welcome </span>
-    <span id="username">{{username}}</span>
-    <span>,</span>
-    <a href="{% url 'logout' %}">Logout</a>
-    {% else %}
-    <a href="{% url 'login' %}">Login</a>
-    {% endif %}
-
-    <!-- If they are authenticateed show highscore history -->
-    {% if user.is_authenticated %}
-    <a href = "{% url 'scores' %}">
-        <button id = "scores">Highscores</button>
-    </a>
-    {% endif %}
 
     <!-- <script src="{% static '/js/puzzle.js' %}"></script> -->
     
     <style>
+
+        body{
+            background: url("../../static/img/Background.jpg");
+        }
         #main{
             font-family: "SF Pro Display", sans-serif;
             text-align: center;
@@ -37,6 +25,15 @@
             margin: 0 auto;
             display: flex;
             flex-wrap: wrap;
+        }
+
+        .log{
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin-top: 8px;
+            margin-left: 10px;
+            width: 100px;
         }
         
         #puzzleBoard img{
@@ -559,15 +556,32 @@ function timerCycle() {
     </script>
 
     <div id="main">
-        <h1>Sliding Puzzle</h1>
+        <!-- Show login logout button depending on state-->
+    {% if user.is_authenticated %}
+        <div id = "welcome" style="margin-top: 20px; font-weight: bold">
+    <span>Welcome, </span>
+    <span id="username">{{username}}</span>
+    <span></span>
+        </div>
+    <a href="{% url 'logout' %}"><button class = "log">Logout</button></a>
+    {% else %}
+    <a href="{% url 'login' %}"><button class = "log">Login</button></a>
+    {% endif %}
+
+    <!-- If they are authenticateed show highscore history -->
+    {% if user.is_authenticated %}
+    <a href = "{% url 'scores' %}">
+        <button id = "scores">Highscores</button>
+    </a>
+    {% endif %}
+        <h1 style="margin-top: 20px">Sliding Puzzle</h1>
         <div id="puzzleBoard" style="margin-top: 120px">
         </div>
         <button onclick="restart()" id = "restart">Restart</button>
         <button onclick="tileNumbers()" id = "btn">Show Tile Numbers</button>
         <button onclick="solver()" id = "solve">Solve</button>
-        <h1>Moves: <span id="moveCount">0</span></h1>
+        <h1 style="margin-top: 20px">Moves: <span id="moveCount">0</span></h1>
         <h1>Time: <span id = "stopwatch">00:00:00</span></h1>
-        <img src="../../static/img/Daredevil/1.jpg">
     </div>
 {% endblock %}
 
