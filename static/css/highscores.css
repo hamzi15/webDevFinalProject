@@ -88,6 +88,6 @@ button{
 }
 
 button:hover{
-    background: linear-gradient(to right, rgb(176, 245, 200), rgb(183, 223, 245));
+    background: linear-gradient(to right, rgb(200, 255, 220), rgb(209, 238, 255));
     cursor: pointer;
 }
