@@ -1,28 +1,32 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseBadRequest
 from django.shortcuts import render
 from django.http import HttpResponse
 from datetime import datetime
-from firstapp.models import Contact
+from firstapp.models import Contact, Score
+from django.views.decorators.csrf import csrf_exempt
+import json
 
 # Create your views here.
 def index(request):
-    # context = { 'name' : 'Hamza ' }
-    # if(request.method == 'POST'):
-    #     name = request.POST.get('name')
-    #     email = request.POST.get('email')
-    #     desc = request.POST.get('desc')
-    #     contact = Contact(name = name, email = email, desc =desc)
-
-    #     contact.save()
-    return render(request, 'firstapp/index.html')
+    username = request.user
+    return render(request, 'firstapp/index.html', {'username': username})
 
 def scores(request):
-    return render(request, 'firstapp/scores.html')
+    data = Score.objects.all
+    print("HERE",data)
 
-def about(request):
-    # return HttpResponse("<h1>About</h1>")
-    # print("yes")
-    return render(request, 'firstapp/about.html')
+    username = request.user
+    return render(request, 'firstapp/scores.html', {'data': data})
 
-def form(request):
-    return render(request, 'firstapp/form.html')
+@csrf_exempt
+def postScore(request):
+    if request.method == 'POST':
+        data=json.loads(request.body)
+        s = Score.objects.create(username= data['username'], moves=data['moves'], time=data['time'])
+        s.save()
+        return HttpResponse("ok")
+    else:
+        return HttpResponseBadRequest()
+
+
+

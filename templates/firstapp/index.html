@@ -4,6 +4,9 @@
 {% block content %}
     <!-- Show login logout button depending on state-->
     {% if user.is_authenticated %}
+    <span>Welcome </span>
+    <span id="username">{{username}}</span>
+    <span>,</span>
     <a href="{% url 'logout' %}">Logout</a>
     {% else %}
     <a href="{% url 'login' %}">Login</a>
@@ -87,7 +90,6 @@ let winningCondition = false;
 let timer;
 
 window.onload = function(){
-    console.log('yes')
     timer = (document.getElementById("stopwatch"));
     let shuffledArray = trueShuffle(imgOrder);
     for (let counter = 0; counter < rows; counter++){
@@ -199,7 +201,7 @@ async function clickOver(){
         boxesAgain.push(nine_again);
 
         await winChecker(boxesAgain);
-    }
+    } 
 }
 
 async function winChecker(array){
@@ -215,6 +217,21 @@ async function winChecker(array){
         button.style.backgroundColor = "#C2C2C2FF";
         button.style.cursor = "default";
         alert("Congratulations, you win!");
+
+        let username = document.getElementById("username")
+        if (username !== null){
+            const endTime = document.getElementById("stopwatch").innerHTML
+            let data = {username: username.innerHTML, moves: moveCount, time: endTime};
+            fetch("http://127.0.0.1:8000/postScore/", {
+                method: "POST",
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(data)
+                }).then(res => {
+                console.log("Request complete! response:", res);
+                });
+                console.log(data)
+        }
+
         winningCondition = true;
         stopTimer();
     }
@@ -505,7 +522,6 @@ function stopTimer() {
 }
 
 function timerCycle() {
-    console.log("here");
     if (stoptime === false) {
     sec = parseInt(sec);
     min = parseInt(min);

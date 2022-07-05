@@ -6,6 +6,7 @@ class Contact(models.Model):
     email = models.CharField(max_length=120)
     desc = models.TextField()
 
-class Scores(models.Model):
+class Score(models.Model):
+    username = models.CharField(max_length=122)
     moves = models.IntegerField()
-    time = models.IntegerField()
+    time = models.CharField(max_length=100)

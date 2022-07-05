@@ -2,6 +2,9 @@
 {% load static %}
 
 {% block content %}
+    {% for item in all %}
+            {{item.moves}} {{item.time}}
+    {% endfor %}
     <link rel="stylesheet" href = "{% static "/css/highscores.css" %}" type="text/css">
     <div style="text-align: center;">
         <h1>Highscores</h1>
