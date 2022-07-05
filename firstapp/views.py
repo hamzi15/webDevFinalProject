@@ -12,9 +12,10 @@ def index(request):
     return render(request, 'firstapp/index.html', {'username': username})
 
 def scores(request):
-    all_items = Score.objects.all()
+    all_items = Score.objects.filter(username=request.user)
     
-    
+
+
     data = {}
     numbers = ["zero","one","two","three","four","five","six","seven","eight","nine","ten"]
     data = {
